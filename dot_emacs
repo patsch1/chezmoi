@@ -1,7 +1,11 @@
 ;; Init Melpa
 
 (require 'package)
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")))
+(require 'package)
+(setq package-archive-priorities '(("gnu" . 5)
+				   ("melpa" . 10))
+      package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+			 ("melpa" . "https://melpa.org/packages/")))
 
 ;; One package dir per emacs version
 (let ((path (format "~/.emacs.d/elpa-%s" emacs-major-version)))
